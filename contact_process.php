@@ -1,19 +1,25 @@
 <?php
 
-    $to = "inova.theme@gmail.com";
+    $to = "tunde4excel@gmail.com";
     $from = $_REQUEST['email'];
     $name = $_REQUEST['name'];
-    $name2 = $_REQUEST['name2'];
-    $csubject = $_REQUEST['subject'];
+    $email = $_REQUEST['email'];
+	$telephone = $_REQUEST['tell'];
+	$company = $_REQUEST['company'];
+	$csubject = $_REQUEST['Enquiries for TME'];
     $cmessage = $_REQUEST['message'];
 
     $headers = "From: $from";
 	$headers = "From: " . $from . "\r\n";
+	$headers = "From: " . $name . "\r\n";
+	$headers = "From: " . $email . "\r\n";
+	$headers = "From: " . $telephone . "\r\n";
+	$headers = "From: " . $company . "\r\n";
 	$headers .= "Reply-To: ". $from . "\r\n";
 	$headers .= "MIME-Version: 1.0\r\n";
 	$headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
 
-    $subject = "You have a message from your Saasland.";
+    $subject = "You have a message from your TME Website Contact Form";
 
     $logo = '';
     $link = '#';
@@ -29,6 +35,7 @@
 	$body .= "<tr><td style='border:none;'><strong>Subject:</strong> {$csubject}</td></tr>";
 	$body .= "<tr><td></td></tr>";
 	$body .= "<tr><td colspan='2' style='border:none;'>{$cmessage}</td></tr>";
+
 	$body .= "</tbody></table>";
 	$body .= "</body></html>";
 
